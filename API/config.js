@@ -1,23 +1,38 @@
 require('dotenv').config();
 const env = process.env.Node_env; // 'dev' or 'test'
 
-const dev = {
-    db : {
-        Url: process.env.DB_CONNECTION
+var config = {
+dev: {
+    database: {
+        url: "mongodb+srv://kibuikaCodes:thetukdataproject.@chasmo-data-mex88.mongodb.net/test?retryWrites=true&w=majority"
     }
+},
+test: {
+    database: {
+        url: "mongodb+srv://kibuikaCodes:thetukdataproject.@chasmo-data-mex88.mongodb.net/test?retryWrites=true&w=majority"
+    }
+}
 };
 
-const test = {
-    db : {
-        Url: process.env.DB_CONNECTION // the database for testing 
-        // make a database for testing and add it here.
-    } 
-};
+module.exports = config;
 
-const config = {
-    dev,
-    test
+// const dev = {
+//     db : {
+//         Url: "mongodb+srv://kibuikaCodes:thetukdataproject.@chasmo-data-mex88.mongodb.net/test?retryWrites=true&w=majority"
+//     }
+// };
 
-};
+// const test = {
+//     db : {
+//         Url: process.env.DB_CONNECTION // the database for testing 
+//         // make a database for testing and add it here.
+//     } 
+// };
 
-module.exports = config[env]
+// const config = {
+//     dev,
+//     test
+
+// };
+
+// module.exports = config[env]
