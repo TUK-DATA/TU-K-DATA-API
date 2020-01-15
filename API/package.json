@@ -4,8 +4,8 @@
   "description": "An API that holds TU-K Data",
   "main": "app.js",
   "scripts": {
-    "start": "SET NODE_ENV=dev && nodemon app.js",
-    "test": "mocha --timeout 10000"
+    "start": "SET NODE_ENV=dev `&& nodemon app.js",
+    "test": "SET NODE_ENV=test && mocha --timeout 1000000000000000000"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

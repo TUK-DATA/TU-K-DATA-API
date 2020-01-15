@@ -9,7 +9,7 @@ const Data = require('../models/data');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('../app');
-const should = chai.should();
+let should = chai.should();
 
 
 chai.use(chaiHttp);
@@ -18,17 +18,19 @@ describe('Data', () => {
     beforeEach((done) => { // Before each test, empty the database
         Data.remove({}, (err) => {
             done();
+            
         });
     });
 describe('/GET data', () => {
     it('it should get all the data', (done) => {
         chai.request(server)
-            .get('/')
+            .get('/data')
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
                 res.body.should.be.eql(0);
             done();
+            
         });
     });
 });
