@@ -1,6 +1,6 @@
 
 // During the test, the env variable is set to test
-process.env.NODE_ENV = 'test'
+// process.env.NODE_ENV = 'test'
 
 const mongoose = require('mongoose');
 const Data = require('../models/data');
@@ -28,7 +28,7 @@ describe('/GET data', () => {
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
-                res.body.should.be.eql(0); 
+                // res.body.should.be.eql(0); 
             done();
             
         });
@@ -42,7 +42,7 @@ describe('/POST data', () => {
             temperature: 41,
             humidity: 100,
             airQuality: 'Good',
-            time: Date.now
+            time: new Date()
         }
             chai.request(server)
                 .post('/data')
@@ -54,6 +54,7 @@ describe('/POST data', () => {
                     res.body.should.have.property('humidity');
                     res.body.should.have.property('airQuality');
                     res.body.should.have.property('time');
+                    res.body.should.have.property('message').eql('The data has been added successfully!');
                 done();
 
             });
