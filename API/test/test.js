@@ -14,13 +14,13 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 // the parent block
-describe('Data', () => {
-    beforeEach((done) => { // Before each test, empty the database
-        Data.remove({}, (err) => {
-            done();
+// describe('Data', () => {
+//     beforeEach((done) => { // Before each test, empty the database
+//         Data.remove({}, (err) => {
+//             done();
             
-        });
-    });
+//         });
+//     });
 describe('/GET data', () => {
     it('it should get all the data', (done) => {
         chai.request(server)
@@ -28,7 +28,7 @@ describe('/GET data', () => {
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
-                res.body.should.be.eql(0);
+                res.body.should.be.eql(0); 
             done();
             
         });
@@ -39,13 +39,13 @@ describe('/GET data', () => {
 describe('/POST data', () => {
     it('it should not post data without some fields', (done) => {
         let data = {
-            temperature: 40,
+            temperature: 41,
             humidity: 100,
             airQuality: 'Good',
             time: Date.now
         }
             chai.request(server)
-                .post('/')
+                .post('/data')
                 .send(data)
                 .end((err, res) => {
                     res.should.have.status(200);
@@ -60,4 +60,4 @@ describe('/POST data', () => {
         });
     });
 
-});
+// });

@@ -1,0 +1,3 @@
+{
+    "db_url" : "process.env.DB_TEST_CONNECTION"
+}
