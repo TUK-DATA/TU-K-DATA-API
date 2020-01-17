@@ -8,13 +8,15 @@ router.post('/', (req, res) => {
         temperature: req.body.temperature,
         humidity: req.body.humidity,
         airQuality: req.body.airQuality,
+        location: req.body.location,
+        time: req.body.time
        
         
     });
 
     data.save()
         .then(data => {
-            res.json({ message: 'The data has been added successfully!', data});
+            res.json(data);
         })
         .catch(error => {
             res.json({ message: error})

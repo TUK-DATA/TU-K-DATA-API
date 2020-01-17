@@ -54,7 +54,7 @@ describe('/POST data', () => {
                     res.body.should.have.property('humidity');
                     res.body.should.have.property('airQuality');
                     res.body.should.have.property('time');
-                    res.body.should.have.property('message').eql('The data has been added successfully!');
+                    // res.body.should.have.property('message').eql('The data has been added successfully!');
                 done();
 
             });

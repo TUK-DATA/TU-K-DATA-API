@@ -18,6 +18,10 @@ const DataSchema = mongoose.Schema({
         type: Date,
         default: Date.now,
         required: true
+    },
+    location: {
+        type: String,
+        required: false
     }
     
 

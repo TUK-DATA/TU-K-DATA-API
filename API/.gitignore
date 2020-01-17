@@ -1,2 +1,5 @@
 // the .env folder
 .env
+
+// ngrok 
+ngrok.exe
