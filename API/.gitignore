@@ -3,3 +3,6 @@
 
 // ngrok 
 ngrok.exe
+
+// node_modules
+./node_modules
