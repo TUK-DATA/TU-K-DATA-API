@@ -23,7 +23,7 @@ app.get('/', (req, res) => res.json({
 }));
 
 // connect to db
-mongoose.connect(process.env.DB_CONNECTION ,{ useNewUrlParser: true}, () => {
+mongoose.connect("mongodb+srv://kibuikaCodes:thetukdataproject.@chasmo-data-mex88.mongodb.net/tu-kData?retryWrites=true&w=majority" ,{ useNewUrlParser: true}, () => {
     console.log(`connected to the database`)
 });
 
