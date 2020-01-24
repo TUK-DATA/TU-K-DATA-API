@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 
+
 const DataSchema = mongoose.Schema({
     temperature: {
         type: Number,
@@ -25,6 +26,6 @@ const DataSchema = mongoose.Schema({
     }
     
 
-});
+},{ timestamps: true});
 
 module.exports = mongoose.model('tukData', DataSchema);

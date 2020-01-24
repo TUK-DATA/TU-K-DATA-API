@@ -4,13 +4,12 @@ const tukData = require('../models/data');
 const router = express.Router();
 
 router.post('/', (req, res) => {
+    
     const data = new tukData({
         temperature: req.body.temperature,
         humidity: req.body.humidity,
         airQuality: req.body.airQuality,
-        location: req.body.location,
-        time: req.body.time
-       
+        location: req.body.location,       
         
     });
 
