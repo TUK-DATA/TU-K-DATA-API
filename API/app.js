@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 require('dotenv').config()
 const port = process.env.PORT;
+const database_connect = process.env.DB_CONNECTION
 
 app.use(bodyParser.json());
 
@@ -23,7 +24,7 @@ app.get('/', (req, res) => res.json({
 }));
 
 // connect to db
-mongoose.connect("mongodb+srv://kibuikaCodes:thetukdataproject.@chasmo-data-mex88.mongodb.net/tu-kData?retryWrites=true&w=majority" ,{ useNewUrlParser: true}, () => {
+mongoose.connect(database_connect ,{ useNewUrlParser: true}, () => {
     console.log(`connected to the database`)
 });
 
