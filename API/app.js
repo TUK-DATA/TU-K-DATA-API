@@ -15,7 +15,7 @@ const getRealtimeRoute = require('./routes/getRealtimeRoute');
 const postRealtimeRoute = require('./routes/postRealtimeRoute');
 
 app.use('/data', getRoute);
-app.use('/data', postRoute);
+app.use(`/data/${process.env.API_KEY}`, postRoute);
 app.use('/data/real-time', getRealtimeRoute);
 app.use('/data/real-time', postRealtimeRoute);
 app.get('/', (req, res) => res.json({
