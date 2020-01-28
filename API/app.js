@@ -17,7 +17,7 @@ const postRealtimeRoute = require('./routes/postRealtimeRoute');
 app.use('/data', getRoute);
 app.use(`/data/${process.env.API_KEY}`, postRoute);
 app.use('/data/real-time', getRealtimeRoute);
-app.use('/data/real-time', postRealtimeRoute);
+app.use(`/data/real-time/${process.env.API_KEY}`, postRealtimeRoute);
 app.get('/', (req, res) => res.json({
     message: "Welcome to The TU-K Data API. To get started go to the /data route to see all the data that is available!"
 }));
