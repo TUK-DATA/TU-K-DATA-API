@@ -10,7 +10,8 @@ router.post('/', (req, res) => {
         temperature: req.body.temperature,
         humidity: req.body.humidity,
         airQuality: req.body.airQuality,
-        time: req.body.time
+        time: new Date().getHours()+":"+new Date().getMinutes()+":"+new Date().getSeconds(),
+        date: new Date().getDate()+"/"+(new Date().getMonth()+1)+"/"+new Date().getFullYear()
         
         
     });
