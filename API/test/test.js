@@ -41,11 +41,11 @@ describe('/POST data', () => {
         let data = {
             temperature: 41,
             humidity: 100,
-            airQuality: 'Good',
+            airQuality: 'Testing value. IGNORE THIS!!',
             time: new Date()
         }
             chai.request(server)
-                .post('/data')
+                .post('/data/jj0qlj6x09j')
                 .send(data)
                 .end((err, res) => {
                     res.should.have.status(200);
