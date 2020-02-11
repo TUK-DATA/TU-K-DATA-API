@@ -1,7 +1,7 @@
 const express = require('express');
 const tukData = require('../models/data');
 
-const id = '5e201533027cd21210265b3c';
+const id = '5e2023668a825b2b4888fe39';
 
 
 const router = express.Router();
