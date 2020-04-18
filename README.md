@@ -1,9 +1,9 @@
 # TU-K-DATA-API
 The API that handles data from the hardware and also interacts with the database.
 
-## The API
 
-# How to run the API
+
+## How to run the API
 1. git clone
 2. cd into the project
 3. npm install
