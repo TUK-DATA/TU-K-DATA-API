@@ -1,7 +1,7 @@
 # TU-K-DATA-API
 The API that handles data from the hardware and also interacts with the database.
 
-
+[View the API](https://tukdata.herokuapp.com/)
 
 ## How to run the API
 1. git clone
