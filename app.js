@@ -8,11 +8,29 @@ const port = process.env.PORT;
 
 app.use(bodyParser.json());
 
+// To allow cross-domain ajax calls
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+
+    // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+      res.send(200);
+    }
+    else {
+      next();
+    }
+};
+
+
 // Import routes
 const getRoute = require('./routes/get');
 const postRoute = require('./routes/post');
 const getRealtimeRoute = require('./routes/getRealtimeRoute');
 const postRealtimeRoute = require('./routes/postRealtimeRoute');
+
+app.use(allowCrossDomain);
 
 app.use('/data', getRoute);
 app.use(`/data/${process.env.API_KEY}`, postRoute);
